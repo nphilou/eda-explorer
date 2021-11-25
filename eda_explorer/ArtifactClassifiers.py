@@ -3,9 +3,9 @@ from sklearn.metrics.pairwise import rbf_kernel
 
 
 def predict_binary_classifier(X):
-    ''''
+    """
     X: num test data by 13 features
-    '''
+    """
 
     # Get params
     params = binary_classifier()

@@ -9,7 +9,7 @@ from .load_files import getInputLoadFile, get_user_input, getOutputPath
 SAMPLE_RATE = 8
 
 def findPeaks(data, offset, start_WT, end_WT, thres=0, sampleRate=SAMPLE_RATE):
-    '''
+    """
         This function finds the peaks of an EDA signal and returns basic properties.
         Also, peak_end is assumed to be no later than the start of the next peak. (Is this okay??)
 
@@ -30,7 +30,7 @@ def findPeaks(data, offset, start_WT, end_WT, thres=0, sampleRate=SAMPLE_RATE):
         amplitude:           list of floats,  value of EDA at apex - value of EDA at start
         max_deriv:           list of floats, max derivative within 1 second of apex of SCR
 
-    '''
+    """
     EDA_deriv = data['filtered_eda'][1:].values - data['filtered_eda'][:-1].values
     peaks = np.zeros(len(EDA_deriv))
     peak_sign = np.sign(EDA_deriv)
@@ -68,7 +68,7 @@ def findPeaks(data, offset, start_WT, end_WT, thres=0, sampleRate=SAMPLE_RATE):
                 find_start = find_start - 1
 
             # If we didn't find a start
-            if found == False:
+            if not found:
                 peak_start[i - start_WT * sampleRate] = 1
                 peak_start_times[i] = data.index[i - start_WT * sampleRate]
                 rise_time[i] = start_WT
@@ -110,7 +110,7 @@ def findPeaks(data, offset, start_WT, end_WT, thres=0, sampleRate=SAMPLE_RATE):
                     # Find width
                     find_rise = i
                     found_rise = False
-                    while found_rise == False:
+                    while not found_rise:
                         if data['EDA'].iloc[find_rise] < half_amp:
                             found_rise = True
                             half_rise[i] = data.index[find_rise]
@@ -124,7 +124,7 @@ def findPeaks(data, offset, start_WT, end_WT, thres=0, sampleRate=SAMPLE_RATE):
                 find_end = find_end + 1
 
             # If we didn't find an end
-            if found == False:
+            if not found:
                 min_index = np.argmin(data['EDA'].iloc[i:(i + end_WT * sampleRate)].tolist())
                 peak_end[i + min_index] = 1
                 peak_end_times[i] = data.index[i + min_index]

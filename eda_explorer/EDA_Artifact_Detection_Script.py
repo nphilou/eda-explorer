@@ -15,16 +15,16 @@ matplotlib.rcParams['text.usetex'] = True
 
 
 def getWaveletData(data):
-    '''
+    """
     This function computes the wavelet coefficients
 
     INPUT:
         data:           DataFrame, index is a list of timestamps at 8Hz, columns include EDA, filtered_eda
 
     OUTPUT:
-        wave1Second:    DateFrame, index is a list of timestamps at 1Hz, columns include OneSecond_feature1, OneSecond_feature2, OneSecond_feature3 
-        waveHalfSecond: DateFrame, index is a list of timestamps at 2Hz, columns include HalfSecond_feature1, HalfSecond_feature2 
-    '''
+        wave1Second:    DateFrame, index is a list of timestamps at 1Hz, columns include OneSecond_feature1, OneSecond_feature2, OneSecond_feature3
+        waveHalfSecond: DateFrame, index is a list of timestamps at 2Hz, columns include HalfSecond_feature1, HalfSecond_feature2
+    """
     startTime = data.index[0]
 
     # Create wavelet dataframes
