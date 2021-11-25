@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
-  name='eda-explorer',         # How you named your package folder (MyLib)
-  packages=['eda-explorer'],   # Chose the same as "name"
+  name='eda_explorer',         # How you named your package folder (MyLib)
+  packages=['eda_explorer'],   # Chose the same as "name"
   version='0.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license
   description='Scripts to detect artifacts and in electrodermal activity (EDA) data',
