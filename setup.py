@@ -14,7 +14,7 @@ setup(
           'numpy',
           'pandas',
           'matplotlib',
-          'sklearn',
+          'scikit-learn',
           'pickle',
           'PyWavelets',
           'scipy',
