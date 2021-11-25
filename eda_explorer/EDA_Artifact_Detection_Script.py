@@ -6,7 +6,7 @@ import pywt
 import os
 import datetime
 
-from load_files import getInputLoadFile, get_user_input
+from .load_files import getInputLoadFile, get_user_input
 from ArtifactClassifiers import predict_binary_classifier, predict_multiclass_classifier
 
 matplotlib.rcParams['ps.useafm'] = True

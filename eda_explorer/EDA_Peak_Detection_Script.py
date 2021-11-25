@@ -4,7 +4,7 @@ import os
 import matplotlib.pyplot as plt
 import pprint
 
-from load_files import getInputLoadFile, get_user_input, getOutputPath
+from .load_files import getInputLoadFile, get_user_input, getOutputPath
 
 SAMPLE_RATE = 8
 
